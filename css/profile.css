@@ -1,0 +1,31 @@
+.submitbutton{
+    min-height: 40px;
+    min-width: 120px;
+    background: black;
+    font-size: 17px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid black;
+}
+.form-control:focus {
+    border-color: black;
+    box-shadow: 0 0 0 0.25rem rgb(0 0 0  / 25%);
+}
+
+#menu_block_2, #menu_block_3, #menu_block_4{
+    display: none;
+}
+#menublock{
+    justify-content: center;
+}
+#logoandtext{
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 300;
+}
+a:hover {
+    color: black;
+}

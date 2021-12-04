@@ -1,0 +1,1078 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,p,a
+{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+.container
+{
+    width: 1180px;
+    margin: 0 auto;
+}
+
+ul, li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+
+}
+
+.logotext{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.menu
+{
+    display: flex;
+    word-wrap: break-word;
+    z-index: 1;
+}
+
+.nav
+{
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_text
+{
+    font-size: 16px;
+    line-height: 18px;
+    transform: scale(0);
+    transition: all 0.6s ease 0s;
+    font-weight: 900;
+}
+
+.burger {
+    z-index: 1;
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background: transparent;
+    transition: right 0.3s ease 0s;
+}
+
+
+.burger::before, .burger::after, .burger span {
+    left: 0;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    background-color: black;
+
+}
+.burger::before, .burger::after{
+    content: "";
+}
+.burger::before{
+    top:0;
+}
+
+.burger::after
+{
+    bottom: 0;
+}
+
+.burger span{
+    transform: scale(1) translate(0px, -50%);
+    top: 50%;
+}
+
+
+.menu li
+{
+    width: 150px;
+    height: 64px;
+    border-right: #000 solid 1px;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+}
+
+.menu li:first-child
+{
+    border-left: #000 solid 1px;
+}
+
+.menu li:last-child
+{
+    border-right: #000 solid 1px;
+}
+
+.menu_obj_text {
+    display: inline-block;
+    color:  black;
+    text-decoration: none;
+    line-height: 64px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#addAnnount, #findAnnount{
+    padding-top: 4px;
+    line-height: 28px;
+}
+
+.menu li:hover .menu_obj_text {
+    font-weight: 900;
+}
+
+.order{
+    text-align: center;
+
+}
+.maintext{
+    font-size: 64px;
+    font-weight: 500;
+
+}
+.mainsubtext{
+    font-size: 36px;
+    font-weight: 300;
+}
+.main{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+.annouttext{
+    text-align: center;
+    font-size: 48px;
+    font-weight: normal;
+
+}
+.annoutblock{
+    margin-top: 38px;
+    margin-top: 38px;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    justify-items: center;
+}
+.show-more-container{
+    text-align: center;
+}
+
+.show-more{
+    min-height: 60px;
+    min-width: 250px;
+    background: black;
+    font-size: 30px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.show-more:hover
+{
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+
+.annbox{
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 4px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    width: 370px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.annimg{
+    height: 216px;
+    width: 190px;
+    border-radius: 10px;
+    align-self: center;
+}
+.annname{
+    align-self: center;
+    font-size:24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+.annabout{
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 15px;
+}
+.annalarm{
+    width: 223px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+.annlink{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    background: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    align-self: center;
+    padding:14px 31px;
+}
+.annlink:hover{
+    background: black;
+    color: white;
+    transition-timing-function: ease-in-out;
+}
+
+.reg
+{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.8);
+    top:0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
+    transition: all 0.8s ease;
+}
+
+.poparea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.reg:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.reg:target .reg_content{
+    opacity: 1;
+    transform: rotate(0deg) translate(0px,0px);
+}
+
+.reg_body{
+    margin: 0px 5px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.reg_content{
+    background: #FFFFFF;
+    padding: 20px 60px;
+    border-radius: 30px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: rotate(90deg)translate(-100%,0px);
+    min-width: 45%;
+}
+
+.close{
+    right: 20px;
+    top: 10px;
+    position: absolute;
+    font-size: 20px;
+    color:black;
+    text-decoration: none;
+}
+
+.close:hover   {
+    font-weight: 900;
+}
+
+.formtitle
+{
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form_item {
+    vertical-align: top;
+    position: relative;
+}
+
+
+.formlabel {
+    font-size: 24px;
+    font-weight: 300;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    right: 15px;
+    top: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 24px;
+    transition: 0.3s;
+}
+
+
+.form_item{
+    margin-bottom: 20px;
+}
+
+.form_bar{
+    width: 100%;
+    height: 40px;
+    padding: 5px 15px;
+    min-height: 25px;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border: black 1px solid;
+}
+
+.form_bar._error{
+    box-shadow: 0px 0px 2px 2px red;
+}
+
+.form_bar._confirm{
+    box-shadow: 0px 0px 2px 2px green;
+}
+
+
+.form_bar:focus{
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+    background: lightgray;
+}
+
+.form_bar:focus~.formlabel,
+.form_bar:not(:focus):valid~.formlabel {
+    top:0px;
+    font-size: 10px;
+}
+
+.form_button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submitbutton
+{
+    min-height: 60px;
+    min-width: 250px;
+    background: black;
+    font-size: 30px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 15px 10px;
+    border: 1px solid black;
+}
+
+.submitbutton:hover
+{
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+
+.submitbutton:disabled{
+    background: grey;
+    color: black;
+    cursor: default;
+    border: 1px solid grey;
+}
+
+.reg_checkbox{
+    display: none;
+}
+
+.agrlabel{
+    margin-top: 30px;
+    text-align: left;
+    display: inline-flex;
+    position: relative;
+    line-height: 140%;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.agrlabel::before{
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 16px;
+    height: 16px;
+    background: lightgray;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.agrlabel::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 2px;
+    background: black;
+    transform: scale(0);
+}
+
+.reg_checkbox:checked + .agrlabel::after{
+    transform: scale(1);
+}
+
+.popup_log p,a{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.popup_log{
+    padding-top: 5px;
+}
+
+.popup_log a{
+    font-weight: 600;
+}
+
+.popup_log a:hover{
+    font-weight: 900;
+}
+
+.agrlabel a{
+    color: black;
+    font-weight: 600;
+}
+
+.agrlabel a:hover{
+    font-weight: 900;
+}
+
+.form_item ul{
+    color: gray;
+    font-size: 12px;
+    display: block;
+}
+
+.form_item ul li{
+    display:none;
+}
+
+.form_item ul li._confirm{
+    color: green;
+    display: none;
+}
+
+.form_item ul li._error{
+    color: red;
+    display: block;
+}
+
+
+.form_item ul li::before{
+    content: "•";
+}
+
+#errorsting{
+    display: none;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 7px;
+
+}
+
+#errorsting._error{
+    color: red;
+    display: block;
+}
+
+.log{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.8);
+    top:0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y:auto;
+    overflow-x:hidden;
+    transition: all 0.8s ease;
+    z-index: 2;
+}
+
+.log:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.log:target .log_content{
+    opacity: 1;
+    transform: rotate(0deg) translate(0px,0px);
+}
+
+.log_body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.log_content
+{
+    background: #FFFFFF;
+    padding: 20px 60px;
+    border-radius: 30px;
+    position: relative;
+    min-width: 45%;
+    margin: 0px 5px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: rotate(90deg)translate(-100%,0px);
+}
+
+
+.footer{
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid black;
+    height: 10px;
+    background: black;
+}
+
+.footer h1
+{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+
+ @media screen and (max-width: 1440px) {
+     .container{
+        width: 80%;
+    }
+     .annbox{
+         width: 350px;
+         height: 430px
+     }
+     .annlink{
+         padding: 10px 25px;
+         margin-bottom: 5px;
+     }
+     .form_item {
+         width: 80%;
+         margin: 0 auto;
+         margin-bottom: 20px;
+     }
+
+     .agrlabel p, a{
+         font-size: 14px;
+     }
+
+
+}
+@media screen and (max-width: 1380px) {
+    .annbox{
+        width: 300px;
+        height: 380px
+    }
+    .agrlabel p, a{
+        font-size: 13px;
+    }
+    .popup_log p,a{
+        font-size: 13px;
+    }
+    .menu li{
+        width: 110px
+    }
+    .menu_obj_text{
+        font-size: 18px;
+    }
+    #addAnnount, #findAnnount{
+        padding-top: 4px;
+        line-height: 28px;
+    }
+
+}
+@media screen and (max-width: 1180px) {
+    .annbox{
+        width: 280px;
+        height: 360px
+    }
+
+    .menu li a{
+        font-size: 16px;
+    }
+
+    .menu li{
+        height: 32px;
+    }
+    .menu_obj_text{
+        line-height: 32px;
+    }
+    #addAnnount, #findAnnount{
+        padding-top: 4px;
+        line-height: 14px;
+    }
+
+}
+@media screen and (max-width: 1100px) {
+    .annbox{
+        width: 250px;
+        height: 330px
+    }
+    .annimg{
+        height: 190px;
+        width: 180px;
+    }
+
+    .menu li{
+        width: 100px;
+    }
+    #addAnnount, #findAnnount{
+        padding-top: 4px;
+        line-height: 14px;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .container{
+        width: 760px;
+    }
+    .annbox{
+        width: 200px;
+        height: 300px;
+    }
+    .annimg{
+        height: 180px;
+        width: 150px;
+    }
+    .annname{
+        font-size: 18px;
+    }
+    .annabout{
+        font-size: 14px;
+    }
+    .annlink{
+        font-size: 20px;
+    }
+    .annoutblock{
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .burger{
+        display: block;
+        transition: all 0.3s ease 0s;
+    }
+
+    .annoutblock{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container{
+        width: 600px;
+    }
+    .nav{
+        width: 600px;
+    }
+    .logopic{
+        width: 60px;
+        height: 55px;
+    }
+    .menu_obj_text{
+        font-size: 18px;
+    }
+
+    .menu_block
+    {
+        margin-top: 15px;
+      display: flex;
+        align-items: flex-start;
+    }
+
+    .logo{
+        align-self: flex-start;
+    }
+
+    .menu{
+        transform: scale(0);
+        position: relative;
+        top:18px;
+        left:50%;
+        transition: all 0.3s ease 0s;
+        display: block;
+    }
+
+    .menu._active{
+        transform: scale(1);
+    }
+
+
+
+    .burger._active {
+        width: 130px;
+    }
+
+    .burger._active span{
+        transform: scale(0);
+        transition: all 0.3s ease-in 0s;
+    }
+
+    .burger._active .menu_text{
+        transform: scale(1);
+    }
+
+
+    .menu li {
+        border: 1px solid black;
+        border-top: #000 solid 0px;
+        border-bottom: #000 solid 0px;
+        width: 128px;
+        height: 32px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .menu li:first-child
+    {
+        border-right: #000 solid 1px;
+    }
+
+
+    .menu li:last-child
+    {
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+    }
+
+    .menu li:hover
+    {
+        background: gray;
+    }
+
+    .menu_obj_text{
+        line-height: 32px;
+    }
+
+    .maintext {
+        font-size: 47px;
+    }
+    .mainsubtext{
+        font-size: 28px;
+    }
+
+    .annbox{
+        width: 340px;
+        height: 400px;
+        margin : 10px;
+    }
+    .annimg{
+        height: 216px;
+        width: 190px;
+    }
+    .annname{
+        font-size: 24px;
+    }
+    .annabout{
+        font-size: 18px;
+    }
+    .annlink{
+        font-size: 24px;
+    }
+    .annouttext{
+        font-size: 40px;
+    }
+    .logotext{
+        font-size: 18px;
+    }
+    .annoutblock{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reg_content
+    {
+        padding: 20px 45px;
+    }
+
+    .formlabel
+    {
+        font-size: 18px;
+    }
+    .form_bar
+    {
+        min-height: 25px;
+    }
+
+    .form_item
+    {
+        margin-bottom: 15px;
+    }
+
+    .agrlabel p,a
+    {
+        font-size: 10px;
+    }
+
+    .popup_log p,a{
+        font-size: 10px;
+    }
+
+    .formtitle
+    {
+        font-size: 28px;
+    }
+
+    .submitbutton
+    {
+        font-size: 24px;
+    }
+
+    .form_item ul li{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 630px) {
+    .container{
+        width: 425px;
+    }
+    .nav{
+        width: 420px;
+    }
+    .logo{
+        margin-right: 20px;
+    }
+    .menu_obj_text{
+        font-size: 15px;
+    }
+    .menu li,.burger._active{
+        width: 90px;
+    }
+    .maintext{
+        font-size: 40px;
+    }
+    .mainsubtext{
+        font-size: 25px;
+    }
+    .menu li a{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container{
+        width: 300px;
+    }
+    .maintext{
+        font-size: 38px;
+    }
+    .mainsubtext{
+        font-size: 20px;
+    }
+    .annouttext{
+        font-size: 38px;
+    }
+    .logo{
+        margin-right: 0px;
+    }
+    .logopic{
+        width: 50px;
+        height: 45px;
+    }
+    .logotext{
+        font-size: 12px;
+    }
+    .menu_obj_text{
+        font-size: 12px;
+    }
+    .menu li ,.burger._active{
+        width: 75px;
+    }
+
+    .nav{
+        width: 300px;
+    }
+    .annbox{
+        width: 300px;
+        height: 350px;
+    }
+
+    .reg_content
+    {
+        padding: 20px 25px;
+    }
+
+    .formlabel
+    {
+        font-size: 14px;
+    }
+    .form_bar
+    {
+        font-size: 17px;
+    }
+
+    .form_item
+    {
+        margin-bottom: 15px;
+    }
+
+    .agrlabel p, a
+    {
+        font-size: 10px;
+    }
+
+    .popup_log p,a{
+        font-size: 10px;
+    }
+
+    .form_item ul li{
+        font-size: 9px;
+    }
+    .menu li a{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .annbox{
+        width: 200px;
+        height: 250px;
+    }
+    .annimg{
+        width: 120px;
+        height: 130px;
+    }
+    .annname{
+        font-size: 18px;
+    }
+    .annlink{
+        font-size: 18px;
+        padding: 5px 25px;
+    }
+    .annabout{
+        font-size: 14px;
+    }
+    .annouttext{
+        font-size: 28px;
+    }
+    .maintext{
+        font-size: 32px;
+    }
+
+    .agrlabel p,a{
+        font-size: 9px;
+    }
+
+    .popup_log p,a{
+        font-size: 9px;
+    }
+    .menu li a{
+        font-size: 9px;
+    }
+
+}
+
+
+#fh5co-about{
+    padding: 5em 0;
+    clear: both;
+}
+@media screen and (max-width: 768px) {
+    #fh5co-about{
+        padding: 3em 0;
+    }
+}
+#menulink{
+    background: white;
+    width: 200px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#menulink ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+#menulink li{
+    margin: 12px;
+}
+#menulink a {
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    color: rgba(0,0,0,.6);
+    position: relative;
+    transition: .3s linear;
+}
+
+#menulink a:hover {
+    background: #000000;
+    color: white;
+}
+
+.show-more-profile{
+    min-height: 30px;
+    min-width: 150px;
+    background: black;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+
+#fh5co-about #info-block, #menulink{
+    padding-left: 0;
+}
+
+
