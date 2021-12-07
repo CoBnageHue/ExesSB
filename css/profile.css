@@ -29,3 +29,12 @@
 a:hover {
     color: black;
 }
+
+#buttondetailpagesubmit{
+    min-height: 10px;
+    min-width: 150px;
+}
+#buttondetailpagebuy{
+    min-height: 40px;
+    min-width: 200px;
+}
