@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <title>ExSB: Покупай, исполняй</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,51 +16,10 @@ session_start();
 <div class="wrapper" id="wrapper">
 <header class="header" id="header">
     <div class="container">
-        <div class="nav">
-            <div class="logo">
-                <img src="img/mainicon.png" alt="logo" class="logopic">
-                <p class="logotext">ExSB</p>
-            </div>
-            <div class="menu_block" id = "menu_block" >
             <?php
-            if($_SESSION['user']){
-                echo '
-                <ul class="menu" id = "menu" >
-                    <li >
-                        <a href = "#" class="menu_obj_text" id="mainlink" >Главная</a >
-                    </li >
-                    <li >
-                        <a href = "#profile" class="menu_obj_text" id="profilelink" >Профиль</a >
-                    </li >
-                    <li >
-                        <a href = "vendor/annount/addAnnount.php" class="menu_obj_text" id="addAnnount" >Добавить объявление</a >
-                    </li >
-                    <li >
-                        <a href = "#findAnnount" class="menu_obj_text" id="findAnnount" >Найти объявление</a >
-                    </li >
-                    <li >
-                        <a href = "vendor/exit.php" class="menu_obj_text" id="exit" >Выйти</a >
-                    </li >
-                </ul >';
-            } else {
-               echo '
-                <ul class="menu" id = "menu" >
-                    <li >
-                        <a href = "#" class="menu_obj_text" class="mainlink" >Главная</a >
-                    </li >
-                    <li >
-                        <a href = "#log" class="menu_obj_text" class="loglink" >Вход</a >
-                    </li >
-                    <li >
-                        <a href = "#reg" class="menu_obj_text" class="reglink" >Регистрация</a >
-                    </li >
-                </ul >';
-                }
+            include 'php/nav.php';
+            echo $NavBar;
             ?>
-                <a class="burger" id="burger">
-                    <span></span>
-                    <p class="menu_text">Меню</p>
-                </a>
     </div>
 </header>
 
@@ -77,7 +36,9 @@ session_start();
 <section class="annout" id="annout">
     <div class="container">
             <h1 class="annouttext">Объявления</h1>
-        <div class="annoutblock" id="annoutblock"></div>
+        <div class="annoutblock" id="annoutblock">
+
+        </div>
         <div class="show-more-container">
             <button class="show-more">Показать ещё</button>
         </div>
@@ -101,76 +62,36 @@ echo '
                 <div class="form_item">
                     <input type="text" name="name" class="form_bar" id="regnamebar" required>
                     <label class="formlabel">Имя</label>
-                    <ul>
-                        <li>
-                            Имя должно быть написано на кириллице.
-                        </li>
-                        <li>
-                            Разрешённые символы: пробел и дефис.
-                        </li>
-                        <li>
-                            Имя не должно начинаться или заканчиваться специальными символами.
-                        </li>
-                        <li>
-                            Специальные символы не могут идти подряд.
-                        </li>
-                        <li>
-                            Минимальная длина имени: 1 символ.
-                        </li>
+                    <ul class="regnamebartext">
+                      
                     </ul>
                 </div>
                 <div class="form_item">
                     <input type="text" name="mail"  class="form_bar" id="regmailebar" required>
                     <label class="formlabel">E-mail</label>
                     <ul class="regmailebartext">
-                        <li>
-                            Формат: адрес@сервис.домен.
-                        </li>
-                        <li>
-                            Пользователь с такой почтой уже существует
-                        </li>
+                       
                     </ul>
                 </div>
                 <div class="form_item">
                     <input type="text" name="phone" class="form_bar" id="regphonebar" required>
                     <label class="formlabel">Телефон</label>
                     <ul class="regphonebartext">
-                        <li>
-                            Формат: +7/8-XXX-XXX-XX-XX.
-                        </li>
-                        <li>
-                            Пользователь с таким номером телефона уже существует
-                        </li>
+                     
                     </ul>
                 </div>
                 <div class="form_item"> 
                     <input type="password" name="pass" class="form_bar" id="regpassbar" required>
                     <label class="formlabel">Пароль</label>
                     <ul class="regpassbartext">
-                        <li>
-                            Пароль должен быть написан на латинице.
-                        </li>
-                        <li>
-                            Разрешённые символы: цифры, ".","/","-".
-                        </li>
-                        <li>
-                            Длина пароля должна быть 6 символов или больше.
-                        </li>
-                        <li>
-                            Пароль не может состоять только из специальных символов.
-                        </li>
+                       
                     </ul>
                 </div>
                 <div class="form_item">
                     <input type="password" name="verpass" class="form_bar" id="regverpassbar" required>
                     <label class="formlabel">Повторите пароль</label>
                     <ul class="regverpassbartext">
-                        <li>
-                            Пароли должны совпадать.
-                        </li>
-                        <li>
-                            Пароль должен быть верного формата
-                        </li>
+                        
                     </ul>
                 </div>
                 <div class="form_item">
@@ -221,7 +142,6 @@ echo '
 ?>
 
 </body>
-<?php if(!$_SESSION['user']){ echo '<script src="js/RegAndLogLogic.js"></script>';} ?>
-<script src="js/BurgerLogic.js"></script>
-<script src="js/AnnountLoader.js"></script>
+<?php if(!$_SESSION['user']){ echo '<script src="/js/RegAndLogLogic.js"></script>';} ?>
+<script src="/js/AnnountLoader.js"></script>
 </html>

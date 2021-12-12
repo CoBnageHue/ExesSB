@@ -169,11 +169,9 @@ ul, li {
     text-align: center;
     font-size: 48px;
     font-weight: normal;
-
+    margin-bottom: 38px;
 }
 .annoutblock{
-    margin-top: 38px;
-    margin-top: 38px;
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
     justify-items: center;
@@ -250,6 +248,7 @@ ul, li {
     padding:14px 31px;
 }
 .annlink:hover{
+    cursor: pointer;
     background: black;
     color: white;
     transition-timing-function: ease-in-out;
@@ -492,25 +491,14 @@ ul, li {
 }
 
 .form_item ul{
-    color: gray;
+    color: red;
     font-size: 12px;
     display: block;
 }
 
-.form_item ul li{
-    display:none;
+.add_form_section{
+    padding: 5em 0;
 }
-
-.form_item ul li._confirm{
-    color: green;
-    display: none;
-}
-
-.form_item ul li._error{
-    color: red;
-    display: block;
-}
-
 
 .form_item ul li::before{
     content: "•";
@@ -1016,9 +1004,7 @@ ul, li {
     .menu li a{
         font-size: 9px;
     }
-
 }
-
 
 #fh5co-about{
     padding: 5em 0;
@@ -1030,6 +1016,7 @@ ul, li {
     }
 }
 #menulink{
+    padding: 15px;
     background: white;
     width: 200px;
     box-shadow: 2px 2px 8px rgba(0,0,0,.1);
@@ -1042,13 +1029,14 @@ ul, li {
     border-top: 1px solid rgba(0,0,0,.3);
 }
 #menulink li{
-    margin: 12px;
+    margin: 12px 0 0 0;
 }
 #menulink a {
     text-decoration: none;
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     color: rgba(0,0,0,.6);
+    padding: 5px;
     position: relative;
     transition: .3s linear;
 }
@@ -1074,5 +1062,9 @@ ul, li {
 #fh5co-about #info-block, #menulink{
     padding-left: 0;
 }
+#menu_block_2, #menu_block_3, #menu_block_4{
+    display: none;
+}
+
 
 

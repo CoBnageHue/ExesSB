@@ -1,9 +1,5 @@
-function __add_annount_init__(){
+function __add_annount_init__() {
     let Form = document.forms[0]
-
-    let Regex = {
-        Price: /^([1-9].*[,\\.][0-9]*)$/g
-    }
 
     let AnnountFields = {
         Name: document.querySelector('#ann_name'),
@@ -13,45 +9,38 @@ function __add_annount_init__(){
         Button: document.querySelector('#submitaddann')
     }
 
-    let FormScripts = {
-        AddButtonClick: function (Field_obj){
-
-        }
-    }
-
-    let DataScripts = {
-        verifyPrice: function (price_field){
-            let result;
-            if(Regex.Price.test(price_field.value)) result = true
-            else result = false
-            return result
-        }
-        ,
-        DBVerify: async function (Field_obj){
-            let FM = new FormData()
-            //Создаём объект с данными для БД
-            FM.append("price", Field_obj.Price.value)
-            FM.append("pic", Field_obj.Image.files[0])
-
-
-            console.log(Field_obj.Image.files[0].type)
-
-            let result = fetch('../annount/annVerify.php',{
-                method: 'POST',
-                body: FM
-            }).then(function (response){
-                return response.json()
+    let AnnFormScripts = {
+        AddButtonClick: function (Field_obj) {
+            AnnDataScripts.AnnAdd(Field_obj).then((DBErrors) => {
+                console.log(DBErrors)
             })
         }
     }
 
-    AnnountFields.Button.addEventListener('click', function (){
-        DataScripts.DBVerify(AnnountFields).then(function (result){
-            console.log(result.json())
-        })
+    let AnnDataScripts = {
+        AnnAdd: async function (Field_obj) {
+            let FM = new FormData()
+            //Создаём объект с данными для БД
+            FM.append("name", Field_obj.Name.value)
+            FM.append("price", Field_obj.Price.value)
+            FM.append("pic", Field_obj.Image.files[0])
+            FM.append("desc", Field_obj.Desc.value)
+
+            let result = fetch('../annount/addAnn.php', {
+                method: 'POST',
+                body: FM
+            }).then((response) => {
+                return response.json()
+            })
+
+            return result
+        }
+    }
+
+    AnnountFields.Button.addEventListener('click', function () {
+        AnnFormScripts.AddButtonClick(AnnountFields)
     })
-
-
 }
-
+document.addEventListener('DOMContentLoaded', function () {
 __add_annount_init__()
+})

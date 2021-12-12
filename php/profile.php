@@ -139,6 +139,42 @@
                     </div>
                 </div>
                 <div class="row mt-3" id="menu_block_2">
+                    <div class="annoutblock" id="annoutblock">
+                        <div class="annbox" id="annbox0">
+                            <a href="#" class="annname" >Куртка зимняя</a>
+                            <img src="img/jacked.jpg" class="annimg">
+                            <p class="annabout">Цена:</p>
+                            <p class="annabout">Время:</p>
+                            <a class="annlink">Откликнуться</a>
+                        </div>
+                        <div class="annbox" id="annbox1">
+                            <a href="#" class="annname" >Перфоратор</a>
+                            <img src="img/perf.jpg" class="annimg">
+                            <p class="annabout">Цена:</p>
+                            <p class="annabout">Время:</p>
+                            <a class="annlink">Откликнуться</a>
+                        </div>
+                        <div class="annbox" id="annbox2">
+                        </div>
+                    </div>
+                    <div class="annoutblock" id="annoutblock">
+                        <div class="annbox" id="annbox0">
+                            <a href="#" class="annname" >Куртка зимняя</a>
+                            <img src="img/jacked.jpg" class="annimg">
+                            <p class="annabout">Цена:</p>
+                            <p class="annabout">Время:</p>
+                            <a class="annlink">Откликнуться</a>
+                        </div>
+                        <div class="annbox" id="annbox1">
+                            <a href="#" class="annname" >Перфоратор</a>
+                            <img src="img/perf.jpg" class="annimg">
+                            <p class="annabout">Цена:</p>
+                            <p class="annabout">Время:</p>
+                            <a class="annlink">Откликнуться</a>
+                        </div>
+                        <div class="annbox" id="annbox2">
+                        </div>
+                    </div>
                     <div class="annoutblock" id="annoutblock"></div>
                     <div class="show-more-container"><button class="show-more-profile">Показать ещё</button></div>
                 </div>

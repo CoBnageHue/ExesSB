@@ -20,6 +20,8 @@
 #menublock{
     justify-content: center;
 }
+
+
 #logoandtext{
     flex-wrap: nowrap;
     align-items: center;
@@ -31,10 +33,188 @@ a:hover {
 }
 
 #buttondetailpagesubmit{
-    min-height: 10px;
-    min-width: 150px;
+    min-height: 40px;
+    min-width: 180px;
 }
 #buttondetailpagebuy{
     min-height: 40px;
-    min-width: 200px;
+    min-width: 180px;
+}
+
+.annoutblock {
+    margin: 0;
+}
+
+@media screen and (max-width: 2560px) {
+    .annbox{
+        width: 250px;
+        height: 360px;
+    }
+
+    .annimg{
+        width: 200px;
+        height: 170px
+    }
+
+
+
+}
+
+@media screen and (max-width: 1440px) {
+    .annbox {
+        width: 230px;
+        height: 310px;
+    }
+
+
+    .annimg{
+        width: 180px;
+        height: 150px
+    }
+
+
+}
+
+@media screen and (max-width: 1280px) {
+    .annbox {
+        width: 200px;
+        height: 270px;
+    }
+    .annname{
+        font-size: 20px;
+    }
+    .annimg{
+        width: 150px;
+        height: 130px
+    }
+    .annlink{
+        width: 170px;
+        height: 50px;
+        font-size: 18px;
+    }
+    .annabout{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 1130px) {
+    .annbox {
+        width: 180px;
+        height: 250px;
+    }
+    .annname{
+        font-size: 16px;
+    }
+    .annimg{
+        width: 140px;
+        height: 120px
+    }
+    .annlink{
+        width: 160px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .annabout{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 1028px) {
+    .annbox {
+        width: 160px;
+        height: 220px;
+    }
+    .annname{
+        font-size: 14px;
+    }
+    .annimg{
+        width: 130px;
+        height: 110px
+    }
+    .annlink{
+        width: 140px;
+        height: 25px;
+        font-size: 13px;
+        padding: 1px 10px;
+    }
+    .annabout{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 988px) {
+    .annbox {
+        width: 200px;
+        height: 270px;
+    }
+    .annname{
+        font-size: 20px;
+    }
+    .annimg{
+        width: 150px;
+        height: 130px
+    }
+    .annlink{
+        width: 170px;
+        height: 50px;
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+    .annabout{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .annbox{
+        width: 370px;
+        height: 400px;
+    }
+    .annimg{
+        height: 216px;
+        width: 190px;
+    }
+    .annname{
+        font-size:24px;
+    }
+    .annimg{
+        width: 250px;
+        height: 230px
+    }
+
+    .annabout{
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .annalarm{
+        width: 223px;
+        height: 56px;
+    }
+    .annlink{
+        width: 300px;
+        font-size: 20px;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 600px) {
+    .annbox{
+        width: 250px;
+        height: 360px;
+    }
+
+    .annimg{
+        width: 200px;
+        height: 170px
+    }
+    .annlink{
+        width: 200px;
+        font-size: 22px;
+        align-items: center;
+    }
+    .annname{
+        font-size: 20px;
+    }
+
 }

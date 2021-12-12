@@ -1,7 +1,7 @@
 let Button = document.querySelector('.show-more')
 
 async function getAnnounFromDB(){
-    let result = fetch('../vendor/AnnountLoaderFromDB.php', {
+    let result = fetch('../php/annount/AnnountLoaderFromDB.php', {
         method: 'GET',
     }).then((response) =>{
         return response.json()
@@ -25,14 +25,14 @@ function getStartAnnounts(data){
 
             div.className = 'annbox'
 
-            div.innerHTML = "<a href=\"#\" class=\"annname\" >" + result[i]["name_item"] + "</a>\n" +
-                "                <img src=\" "+ result[i]["picture"] +" \" class=\"annimg\">\n" +
+            div.innerHTML = "<p href=\"#\" class=\"annname\" >" + result[i]["name_item"] + "</p>\n" +
+                "                <img src=\" "+"/img/uploads/"+result[i]["picture"] +" \" class=\"annimg\">\n" +
                 "                <p class=\"annabout\">Цена: "+result[i]["price"]+"</p>\n" +
                 "                <p class=\"annabout\">Опубликовано в: "+result[i]["publication_time"]+"</p>\n" +
-                "                <a class=\"annlink\">Откликнуться</a>"
-
+                "                <button class=\"annlink\">Откликнуться</button>\<n></n>"
             document.querySelector('.annoutblock').appendChild(div)
         }
+        SubscribeButtons()
 
     })
 }
@@ -63,15 +63,15 @@ function addAnnountsOnClick(children_count, data){
 
             div.className = 'annbox'
 
-            div.innerHTML = "<a href=\"#\" class=\"annname\" >" + obj.Result[i]["name_item"] + "</a>\n" +
-                "                <img src=\" "+  obj.Result[i]["picture"] +" \" class=\"annimg\">\n" +
+            div.innerHTML = "<p href=\"#\" class=\"annname\" >" + obj.Result[i]["name_item"] + "</p>\n" +
+                "                <img src=\" "+" /img/uploads/"+ obj.Result[i]["picture"] + "\" class=\"annimg\">\n" +
                 "                <p class=\"annabout\">Цена: "+ obj.Result[i]["price"]+"</p>\n" +
                 "                <p class=\"annabout\">Опубликовано в: "+ obj.Result[i]["publication_time"]+"</p>\n" +
-                "                <a class=\"annlink\">Откликнуться</a>"
+                "                <button action=\"/php/detailpage.php\" target=\"_self\" class=\"annlink\">Откликнуться</button>"
 
             document.querySelector('.annoutblock').appendChild(div)
         }
-
+        SubscribeButtons()
     })
 }
 
@@ -81,6 +81,15 @@ function Subscribe(data) {
         let count = document.querySelector('.annoutblock').childElementCount
         addAnnountsOnClick(count, data)
     })
+}
+
+function SubscribeButtons(){
+    let links = document.querySelectorAll('.annlink')
+    for(let i=0; i<links.length; i++){
+        links[i].addEventListener('click',function (){
+            window.location = '/php/detailpage.php/id=1'
+        })
+    }
 }
 
 function  __anninit__(){
